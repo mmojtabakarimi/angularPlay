@@ -1,0 +1,21 @@
+<div class="content">
+  <button ng-click="order='name'">Oredr by Name</button>
+  <button ng-click="order='belt'">Oredr by belt</button>
+  <input type="text" ng-model="search"></input>
+
+  <ul>
+      <li ng-repeat="person  in persons  | orderBy: order | filter:search" ng-show="person.availabel">
+      <img ng-src="{{person.thumb}}" style="margin: -12px 2px  2px 0 ;float:left;width:50px" ng-show="person.thumb" />
+        <h3>  {{person.name}}-{{person.rate | currency:'£'}}</h3>
+        <div class=" remove" ng-click="removeLine(person)">x</div>
+        <span  class="belt" style=" background: {{ person.belt }} "> {{person.belt}} belt</span>
+      </li>
+  </ul>
+
+  <form ng-submit="addNewPerson()">
+    <input type="text" ng-model="newPerson.name" placeholder="name" />
+    <input type="text" ng-model="newPerson.belt" placeholder="belt" />
+    <input type="text" ng-model="newPerson.rate" placeholder="rate" />
+    <input type="submit" value="Add New  Person" />
+  </form>
+</div>
