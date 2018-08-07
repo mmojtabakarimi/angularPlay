@@ -1,3 +1,2 @@
-Hello  Every body
-this is  the  test  project  about  angular JS
-you can  edit  git 
+#Angular  Test
+this is  angular  test project
